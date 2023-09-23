@@ -10,12 +10,10 @@ spec:
   selector:
     matchLabels:
       app: mani
-      evn: development
   template:
     metadata:
       labels:
         app: mani
-        env: development
       name: raju
     spec:
       containers:
