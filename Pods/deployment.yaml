@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: raju
+  name: raju
+spec:
+  minReadySeconds: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mani
+      evn: development
+  template:
+    metadata:
+      labels:
+        app: mani
+        env: development
+      name: raju
+    spec:
+      containers:
+        - name: my-image
+          image: ippilirajesh66/nopcommerce:1.0
+          ports:
+            - containerPort: 5000
+              protocol: TCP  
