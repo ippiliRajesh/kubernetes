@@ -7,4 +7,5 @@ spec:
     - name: webserver
       image: nginx
       ports:
-        - port: 80
+        - containerPort: 80
+          protocol: TPC
