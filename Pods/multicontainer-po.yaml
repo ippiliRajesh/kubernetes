@@ -11,7 +11,7 @@ spec:
           protocol: TCP
 
     - name: jenkines
-      image: jenkines/jenkins:jdk17
+      image: jenkins/jenkins:jdk11
       ports:
         - containerPort: 8080
           protocol: TCP
