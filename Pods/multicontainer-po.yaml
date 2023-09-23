@@ -8,11 +8,10 @@ spec:
       image: nginx:1.25
       ports:
         - containerPort: 80
-          protocol: TPC
+          protocol: TCP
 
     - name: jenkines
       image: jenkines/jenkins:jdk17
       ports:
         - containerPort: 8080
-          protocol: TPC
-          
+          protocol: TCP
