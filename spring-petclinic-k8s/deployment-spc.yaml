@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  labels: 
-    app: spc
   name: spc-deployment
+  labels: 
+    app: spc-dep
 spec: 
   minReadySeconds: 2
   replicas: 3
   selector: 
     matchLabels:
-      app: spc-svc
+      app: spc
   template:
     metadata:
       name: rajesh
       labels:
-        app: spc-svc
+        app: spc1
     spec:
       containers:
         - name: spc-container
