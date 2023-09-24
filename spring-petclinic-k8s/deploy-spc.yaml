@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadat: 
+  name: deploy-svc
+spec:
+  minReadySeconds: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spc
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      name: spcpod
+      labels:
+        app: spc
+    spec: 
+      containers:
+        - name: spc-1
+          image: ippilirajesh66/spring-petclinic:1.0
+          ports:
+            - containerPort: 8080
+

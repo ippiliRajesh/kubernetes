@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
-metadata: 
-  name: spcsvc
-spec:
+metadat: 
+  name: svc-deploy
+spec: 
   ports:
-    name: spc-container
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
+    - name: svc-1
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
   selector:
     app: spc
-  type: clusterIP      
+  type: ClusterIP
