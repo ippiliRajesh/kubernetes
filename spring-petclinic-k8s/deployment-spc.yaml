@@ -19,7 +19,7 @@ spec:
     metadata:
       name: spc
       labels:
-        app: spc1
+        app: spc
     spec:
       containers:
         - name: spc-container
