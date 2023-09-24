@@ -9,7 +9,7 @@ spec:
   ports:
     name: spcsvc-port
     port: 8080
-    protocol: TPC
+    protocol: TCP
     targetport: 32000
   selector:
     app: spc-svc
