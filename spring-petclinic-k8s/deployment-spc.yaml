@@ -11,13 +11,13 @@ spec:
     matchLabels:
       app: spc
   strategy: 
-    type: rollingUpdate
+    type: RollingUpdate
     rollingUpdate: 
       maxSurge: 25%
       maxUnavailable: 25%
   template:
     metadata:
-      name: spc-pod
+      name: spc
       labels:
         app: spc1
     spec:
