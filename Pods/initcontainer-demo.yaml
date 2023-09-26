@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-demo
+  labels:
+    app: nginx
+spec:
+  initContainers:
+    - name: init-con1
+      image: alpine
+      command:
+        - sleep
+        - 5s
+    - name: init-con1
+      image: alpine
+      command:
+        - sleep
+        - 10s
+  containers:
+    - name: nginx-con
+      image: nginx:1.25
+                

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metdata:
+  name: kalabairava
+  labels:
+    app: sharkhan
+    version: magadhera
+spec:
+  containers
+    - name: kalabairava
+      image: alpine

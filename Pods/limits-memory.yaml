@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: limits-memrory.yaml
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      resources:
+        requests: 
+          memory: "128Mi"
+        limits:
+           memory: "300Mi"
+    - name: jenkins
+      image: jenkins/jenkins
+      resources:
+        requests: 
+          memory: "256Mi"
+          cpu: "500m"
+        limits:
+           memory: "500Mi" 
+           cpu: "1000m"     
