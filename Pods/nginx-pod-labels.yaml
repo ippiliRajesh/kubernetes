@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-pod-label1
+    env: dev    
+spec:
+  containers:
+    - name: webserver
+      image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP
+
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-pod-label2
+    env: qt
+spec:
+  containers:
+    - name: webserver
+      image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-pod-label3
+    env: test    
+spec:
+  containers:
+    - name: webserver
+      image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP                  
