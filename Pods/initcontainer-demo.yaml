@@ -4,6 +4,7 @@ metadata:
   name: init-demo
   labels:
     app: nginx
+    purpose: initdemo
 spec:
   initContainers:
     - name: init-con1
