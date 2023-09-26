@@ -6,6 +6,6 @@ metdata:
     app: sharkhan
     version: magadhera
 spec:
-  containers
+  containers:
     - name: kalabairava
       image: alpine
