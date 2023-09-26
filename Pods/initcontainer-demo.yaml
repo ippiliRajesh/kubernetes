@@ -10,12 +10,12 @@ spec:
       image: alpine
       command:
         - sleep
-        - 5s
+        - 30s
     - name: init-con2
       image: alpine
       command:
         - sleep
-        - 10s
+        - 60s
   containers:
     - name: nginx-con
       image: nginx:1.25
