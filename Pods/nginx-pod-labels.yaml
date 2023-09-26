@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx-pod1
   labels:
     app: nginx-pod-label1
     env: dev    
@@ -19,7 +19,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx-pod2
   labels:
     app: nginx-pod-label2
     env: qt
@@ -34,7 +34,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx-pod3
   labels:
     app: nginx-pod-label3
     env: test    
