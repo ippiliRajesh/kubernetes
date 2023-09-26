@@ -4,7 +4,7 @@ metdata:
   name: kalabairava
   labels:
     app: sharkhan
-    version: magadhera
+    env: magadhera
 spec:
   containers:
     - name: kalabairava
