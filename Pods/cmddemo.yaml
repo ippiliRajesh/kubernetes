@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx-pod-cmm
   labels:
     app: nginx
     env: dev
@@ -12,7 +12,7 @@ spec:
       image: nginx
       ports:
         - containerPort: 80
-          protocol: TCPx
+          protocol: TCP
     - name: logscmd
       image: alpine
       args: 
