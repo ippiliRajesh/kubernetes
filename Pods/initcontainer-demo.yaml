@@ -12,12 +12,12 @@ spec:
       image: alpine
       command:
         - sleep
-        - 5s
+        - 30s
     - name: init2
       image: alpine
       command:
         - sleep
-        - 10s
+        - 30s
   containers:
     - name: webserver
       image: nginx:1.25
