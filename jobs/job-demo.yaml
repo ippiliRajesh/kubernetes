@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata: 
+  name: job-demo
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+    template:
+      metadata:
+        labels:
+          app: nginx
+      spec:
+        containers: 
+          - name: alpinecon
+            image: alpine
+            command: 
+              - sleep
+              - 10s        

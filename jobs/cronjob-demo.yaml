@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata: 
+  name: cronjob-demo
+  labels:
+    app: nginx
+spec:
+  schedule: '*/3 * * * *'
+  jobTemplate:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      backoffLimit: 3
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+            - name: nginxc0n
+              image: alpine
+              command:
+                - sleep  
+                - 10s
