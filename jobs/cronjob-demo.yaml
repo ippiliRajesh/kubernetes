@@ -12,14 +12,12 @@ spec:
         app: nginx
     spec:
       backoffLimit: 3
-      selector:
-        matchLabels:
-          app: nginx
       template:
         metadata:
           labels:
             app: nginx
         spec:
+          restartPolicy: OnFailure
           containers:
             - name: nginxc0n
               image: alpine
