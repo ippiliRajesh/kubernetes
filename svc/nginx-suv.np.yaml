@@ -9,7 +9,10 @@ spec:
   selector:
     app: jenkins
   ports:
-    nodePort: 32222
-    port: 8080
-    targetPort: 8080
-    protocol: TCP
+    - nodePort: 32222
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+
+
+ 
