@@ -13,6 +13,6 @@ spec:
         - 1d
       envFrom:
         - configMapRef: 
-            name: userinfo-config
+          name: userinfo-config
         - secretRef:
-            name: userinfo-secret 
+          name: userinfo-secret 
