@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-cms
+  lables:
+    app: demo
+ spec:
+   containers:
+     - name: exper-config
+       image: alpine
+       command:
+         - sleep
+         - 1d
+       envFrom:
+         - configMapRef: 
+             name: userinfo-config
+         - secretRef:
+             name: userinfo-secret 
