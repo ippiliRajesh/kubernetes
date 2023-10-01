@@ -21,4 +21,33 @@ spec:
           image: ippilirajesh66/nopcommerce:1.0
           ports:
             - containerPort: 5000
-              protocol: TCP  
+              protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nop-deploy
+spec:
+  minReadySeconds: 5
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nop
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: nop
+        version: v1.1
+    spec:
+      containers:
+        - name: nop
+          image: shaikkhajaibrahim/nopcommerceaug23
+          ports:
+            - containerPort: 80
+              protocol: TCP              

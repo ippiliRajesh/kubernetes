@@ -1,0 +1,14 @@
+apiVersion: vi
+kind: 	Service
+metadata:
+  name: dp-svc
+  labels:
+    app: sample-svc
+spec:
+  type: LoadBalance
+  selector:
+    app: nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP

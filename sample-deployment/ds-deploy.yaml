@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diploy-sample
+  labels:
+    app: nginx-deploy
+  annotations:
+    kubernetes.io/change-cause: "image updated to v2.0"  
+spec:
+  minReadySeconds: 5
+  replicas: 10
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 30%
+      maxUnavailable: 20%
+  template:
+    metadata:
+      name: temp-nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginxcon
+          image:
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            failureThreshold: 3
+            periodSeconds: 1
+            successThreshold: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            failureThreshold: 2
+            periodSeconds: 2
+            successThreshold: 2            
