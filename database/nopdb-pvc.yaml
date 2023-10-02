@@ -6,7 +6,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: nop-retain  
+  storageClassName: gp2  
   resources:
     requests:
       stroage: 5Gi  
