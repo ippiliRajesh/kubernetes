@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-vol
+  labels:
+    app: demo
+spec:
+  containers:
+    - name: expercon
+      image: nginx
+      volumeMounts:
+        - name: username-vol
+          mountPath: /creds/username
+        - name: passward-vol
+          mountPath: /creds/passward          
+  volumes:
+    - name: username-vol
+      configMap:
+        name: userinfo-config
+    - name: passward-vol   
+      secret:
+        secretName: userinfo-secret     
