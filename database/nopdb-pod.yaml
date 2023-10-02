@@ -11,7 +11,7 @@ spec:
       image: mysql:8
       envFrom:
         - secretRef:
-          name: nopdb-secret
+            name: nopdb-secret
       volumeMounts:
         - name: nopdb-vol
           mountPath: /var/lib/mysql  
