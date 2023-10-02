@@ -9,4 +9,4 @@ spec:
   storageClassName: gp2  
   resources:
     requests:
-      stroage: 5Gi  
+      storage: 5Gi  
