@@ -7,8 +7,9 @@ metadata:
     app: nginx-svc
 spec:
   type: ClusterIP
-  selector: nginxdb 
+  selector:
+    app: nginxdb
   ports:
-    - targetPort: 80
+    - targetPort: nginxdb-port
       port: 80 
       protocol: TCP   
