@@ -18,4 +18,4 @@ spec:
   volumes:
     - name: nopdb-vol
       persistentVolumeClaim:
-        claimName: my-pvc        
+        claimName: nopdb-pvc        
