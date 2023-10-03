@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nop-app
+  labels:
+    app: nopcommerce 
+spec:
+  minReadySeconds: 3
+  replicas: 4
+  selector: 
+    matchLabels:
+      app: nop
+  template:
+    metadata:
+      name: nop-temp
+      labels:
+        app: nop
+    spec:
+      containers:
+        - name: nop-container
+          image: ippilirajesh66/nopcommerce
+          ports:
+            - containerPort: 5000
+              protocol: TCP
+                          
