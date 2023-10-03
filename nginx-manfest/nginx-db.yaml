@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginxdb-db 
+  labels:
+    app: nginx-db
+spec:
+  minReadySeconds: 3
+  replicas: 3
+  selector: 
+    app: nginxdb
+  template:
+    metadata:
+      labels:
+        app: nginxdb
+    spec:
+      containers:
+        - name: nginxdb
+          image: mysql:8
+          ports:
+            - containerPort: 80
+              protocol: TCP
+              name: nginxdb-port
