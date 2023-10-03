@@ -7,7 +7,7 @@ metadata:
     app: nopcommerce 
 spec:
   minReadySeconds: 3
-  replicas: 1
+  replicas: 4
   selector: 
     matchLabels:
       app: nop
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nop-container
-          image: ippilirajesh66/nopcommerce
+          image: ippilirajesh66/nopcommerce:1.0
           ports:
             - containerPort: 5000
               protocol: TCP
