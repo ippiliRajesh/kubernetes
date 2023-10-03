@@ -34,4 +34,17 @@ spec:
             requests:
               memory:
               cpu:
-              
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            failureThreshold: 3
+            periodSeconds: 1
+            successThreshold: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            failureThreshold: 2
+            periodSeconds: 2
+            successThreshold: 2    
