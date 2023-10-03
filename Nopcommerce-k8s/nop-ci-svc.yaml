@@ -1,0 +1,15 @@
+apiVersion: vi
+kind: Service
+metadata:
+  name: nop-cip-svc
+  labels:
+    app: nop-cip
+spec:
+  type: ClusterIP
+  selector:
+    app: nopdb
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  

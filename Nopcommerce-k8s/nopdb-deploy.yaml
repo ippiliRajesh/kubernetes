@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nopdb
+  labels:
+    app: nopdb
+spec:
+  minReadySeconds: 3
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: nopdb
+  template:
+    metadata:
+      name: nop-temp
+      labels:
+        app: nopdb
+    spec:
+      containers:
+        - name: nop-db
+          image: mysql:8
+          env:
+            - name: MYSQL_DATABASE
+              value: 'nopdb'
+            - name: MYSQL_USER
+              value: 'nop'
+            - name: MYSQL_PASSWORD
+              value: 'nop123'
+            - name: MYSQL_ROOT_PASSWORD
+              value: 'nop123'
+          ports:
+            - containerPort: 80
+              protocol: TCP
+                  

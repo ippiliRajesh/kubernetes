@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: nginxcon
-          image:
+          image: ippilirajesh66/deploy-sample:v2.0
           ports:
             - containerPort: 80
               protocol: TCP
