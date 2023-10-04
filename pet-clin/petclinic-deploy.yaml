@@ -21,7 +21,7 @@ spec:
       containers:
       - name: petclinic
         # Run this image
-        image: qt1234.jfrog.io/workshop-docker-local/petclinic:latest
+        image: ippilirajesh66/spring-petclinic:1.0
         ports:
           - containerPort: 8080
         resources:
