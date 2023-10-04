@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
         - name: nop-container
-          image: nginx
+          image: ippilirajesh66/nopcommerce:1.0
           ports:
-            - containerPort: 80
+            - containerPort: 5000
               protocol: TCP
                           
