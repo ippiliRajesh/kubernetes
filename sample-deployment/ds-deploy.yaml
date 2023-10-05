@@ -4,6 +4,7 @@ metadata:
   name: diploy-sample
   labels:
     app: nginx-deploy
+    namespace: prod
   annotations:
     kubernetes.io/change-cause: "image updated to v2.0"  
 spec:
