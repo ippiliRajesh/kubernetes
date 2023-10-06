@@ -1,5 +1,5 @@
 apiVersion: vi
-kind: 	Service
+kind: Service
 metadata:
   name: dp-svc
   labels:
