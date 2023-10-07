@@ -4,6 +4,7 @@ metadata:
   name: dp-svc
   labels:
     app: sample-svc
+    namespace: prod
 spec:
   type: LoadBalance
   selector:
