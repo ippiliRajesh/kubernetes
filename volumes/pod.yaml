@@ -2,19 +2,19 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nopdb-pod
+  name: mysql-vol
   labels:
-    app: nopdb
+    app: mysql
 spec: 
   containers:
-    - name: nopdb-con
+    - name: mysql
       image: mysql:8
       ports:
         - containerPort: 3306
-          protocol: TCP 
-      # envFrom:
-      #   - secretRef:
-      #       name: nopdb-secret
+      #     protocol: TCP 
+      volumeMounts:
+        - name: mysql-vol
+          mountPath: /var/lib/mysql  
       env:
             - name: MYSQL_DATABASE
               value: 'nopdb'
@@ -24,10 +24,7 @@ spec:
               value: 'nop123'
             - name: MYSQL_ROOT_PASSWORD
               value: 'nop123'
-      volumeMounts:
-        - name: nopdb-vol
-          mountPath: /var/lib/mysql  
   volumes:
-    - name: nopdb-vol
+    - name: mysql-vol
       persistentVolumeClaim:
-        claimName: nopdb-pvc
+        claimName: mysql-pvc
