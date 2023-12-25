@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: spark-master
+spec: 
+  minReadySeconds: 3
+  replicas: 
+  selector:
+    matchLabels:
+      app: spark-job
+  template:
+    metadata:
+      labels: 
+        app: spark-job
+    spec: 
+      containers:
+        - name: spark-con
+          image:
+          args: 
+          command: 
+          resources: 
+            requests:
+              cpu: "1.5"
+              memory: 2Gi
+          volumeMounts: 
+            - mountPath: /opt/spark/conf
+              name: spark-config
+          
+      ServiceAccount:
+      ServiceAccountName:
+      volume: 
+        - configMap:
+            name: spark-config
+          name: spark-config                  
