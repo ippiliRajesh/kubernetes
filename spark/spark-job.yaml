@@ -4,8 +4,7 @@ kind: Deployment
 metadata:
   name: spark-master
 spec: 
-  minReadySeconds: 3
-  replicas: 
+  replicas: 1
   selector:
     matchLabels:
       app: spark-job
@@ -14,11 +13,15 @@ spec:
       labels: 
         app: spark-job
     spec: 
+      serviceAccount: spark
       containers:
         - name: spark-con
-          image:
+          image: ippilirajesh66/apachespark:latest
           args: 
+            - '/opt/spark/bin/spark-submit ../examples/src/main/python/py.py 1000000; tail -f /dev/null;'
           command: 
+            - /bin/sh
+            - -c
           resources: 
             requests:
               cpu: "1.5"
@@ -26,10 +29,8 @@ spec:
           volumeMounts: 
             - mountPath: /opt/spark/conf
               name: spark-config
-          
-      ServiceAccount:
-      ServiceAccountName:
-      volume: 
-        - configMap:
+      volumes: 
+        - name: spark-config
+          configMap:
             name: spark-config
-          name: spark-config                  
+                
